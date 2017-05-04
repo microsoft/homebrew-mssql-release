@@ -1,1 +1,3 @@
-TODO: Create a file called LICENSE (not LICENSE.TXT, LICENSE.md, etc.)…
+brew forumlae for
+  - Microsoft ODBC Driver for SQL Server
+  - SQL Server Command Line Utilities
