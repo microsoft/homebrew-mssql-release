@@ -7,7 +7,7 @@ class Msodbcsql < Formula
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     If you installed this formula with the registration option (default), you'll
     need to manually remove [ODBC Driver 13 for SQL Server] section from
     odbcinst.ini after the formula is uninstalled. This can be done by executing

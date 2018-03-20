@@ -61,7 +61,7 @@ class Msodbcsql17AT17011 < Formula
     end
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     If you installed this formula with the registration option (default), you'll
     need to manually remove [ODBC Driver 17 for SQL Server] section from
     odbcinst.ini after the formula is uninstalled. This can be done by executing
