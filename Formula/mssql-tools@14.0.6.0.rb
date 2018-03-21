@@ -9,20 +9,19 @@ class MssqlToolsAT14060 < Formula
   depends_on "openssl"
   depends_on "msodbcsql"
 
-  def check_eula_acceptance
-    if ENV["ACCEPT_EULA"] != "y" and ENV["ACCEPT_EULA"] != "Y" then
+  def check_eula_acceptance?
+    if ENV["ACCEPT_EULA"] != "y" && ENV["ACCEPT_EULA"] != "Y"
       puts "The license terms for this product can be downloaded from"
       puts "http://go.microsoft.com/fwlink/?LinkId=746949 and found in"
       puts "/usr/local/share/doc/mssql-tools/LICENSE.txt . By entering 'YES',"
       puts "you indicate that you accept the license terms."
       puts ""
-      while true do
+      loop do
         puts "Do you accept the license terms? (Enter YES or NO)"
         accept_eula = STDIN.gets.chomp
-        if accept_eula then
-          if accept_eula == "YES" then
-            break
-          elsif accept_eula == "NO" then
+        if accept_eula
+          break if accept_eula == "YES"
+          if accept_eula == "NO"
             puts "Installation terminated: License terms not accepted."
             return false
           else
@@ -36,13 +35,11 @@ class MssqlToolsAT14060 < Formula
         end
       end
     end
-    return true
+    true
   end
 
   def install
-    if !check_eula_acceptance
-      return false
-    end
+    return false unless check_eula_acceptance?
 
     chmod 0444, "bin/sqlcmd"
     chmod 0444, "bin/bcp"
@@ -53,6 +50,13 @@ class MssqlToolsAT14060 < Formula
     chmod 0644, "usr/share/doc/mssql-tools/LICENSE.txt"
     chmod 0644, "usr/share/doc/mssql-tools/THIRDPARTYNOTICES.txt"
 
-    cp_r ".", "#{prefix}"
+    cp_r ".", prefix.to_s
+  end
+
+  test do
+    out = shell_output("#{bin}/sqlcmd -?")
+    assert_match "Microsoft (R) SQL Server Command Line Tool", out
+    out = shell_output("#{bin}/bcp -v")
+    assert_match "BCP - Bulk Copy Program for Microsoft SQL Server", out
   end
 end
