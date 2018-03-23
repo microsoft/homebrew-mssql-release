@@ -2,6 +2,7 @@ class Msodbcsql < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url "https://download.microsoft.com/download/4/9/5/495639C0-79E4-45A7-B65A-B264071C3D9A/msodbcsql-13.1.9.2.tar.gz"
+  version 13.1.9.2
   sha256 "06f4f45bbf16438d681227c6eeada89cbf03a78c61338bdc5eda51ab0e314e5d"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
