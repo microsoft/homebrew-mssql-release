@@ -1,4 +1,4 @@
-class MssqlTools < Formula
+class MssqlToolsAT17101 < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
   url "https://download.microsoft.com/download/F/D/1/FD16AA69-F27D-440E-A15A-6C521A1972E6/mssql-tools-17.1.0.1.tar.gz"
@@ -20,8 +20,8 @@ class MssqlTools < Formula
         puts "Do you accept the license terms? (Enter YES or NO)"
         accept_eula = STDIN.gets.chomp
         if accept_eula
-          break if accept_eula.casecmp("YES").zero?
-          if accept_eula.casecmp("NO").zero?
+          break if accept_eula == "YES"
+          if accept_eula == "NO"
             puts "Installation terminated: License terms not accepted."
             return false
           else
