@@ -1,10 +1,12 @@
-class Msodbcsql17 < Formula
+class Msodbcsql17AT17101 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url "https://download.microsoft.com/download/1/9/A/19AF548A-6DD3-4B48-88DC-724E9ABCEB9A/msodbcsql-17.1.0.1.tar.gz"
   version "17.1.0.1"
   sha256 "9951b27ff2114df82f58a63095ac95da319359d525296ad25f6f020b0e3b69de"
-  
+
+  keg_only :versioned_formula
+
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
   depends_on "unixodbc"
