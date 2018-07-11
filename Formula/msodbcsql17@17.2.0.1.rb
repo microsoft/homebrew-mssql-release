@@ -1,9 +1,9 @@
-class Msodbcsql17AT17011 < Formula
+class Msodbcsql17AT17201 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
-  url "https://download.microsoft.com/download/1/9/A/19AF548A-6DD3-4B48-88DC-724E9ABCEB9A/msodbcsql-17.0.1.1.tar.gz"
-  version "17.0.1.1"
-  sha256 "4cb8e283896fba583a48215305edc0fd97120de42d804a0a2440e9e8e4b9bbe2"
+  url "https://download.microsoft.com/download/1/9/A/19AF548A-6DD3-4B48-88DC-724E9ABCEB9A/msodbcsql-17.2.0.1.tar.gz"
+  version "17.2.0.1"
+  sha256 "62697b0e452cf26cd08475defed702a2c1ef303aa2fdcb049219a1c00cf11571"
 
   keg_only :versioned_formula
 
@@ -15,7 +15,7 @@ class Msodbcsql17AT17011 < Formula
   def check_eula_acceptance?
     if ENV["ACCEPT_EULA"] != "y" && ENV["ACCEPT_EULA"] != "Y"
       puts "The license terms for this product can be downloaded from"
-      puts "https://aka.ms/odbc170eula and found in"
+      puts "https://aka.ms/odbc172eula and found in"
       puts "/usr/local/share/doc/msodbcsql17/LICENSE.txt . By entering 'YES',"
       puts "you indicate that you accept the license terms."
       puts ""

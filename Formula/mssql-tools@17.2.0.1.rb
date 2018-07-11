@@ -1,9 +1,9 @@
-class MssqlTools < Formula
+class MssqlToolsAT17201 < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
   url "https://sqlchoice.blob.core.windows.net/sqlchoice/17.2.0.1/macOS/mssql-tools-17.2.0.1.tar.gz"
   version "17.2.0.1"
-  sha256 "4d0c30602d2207efde54ff77ebf17f71cd67735edba95f40be54a365db943819"
+  sha256 "a6165c0289c043ac64fdb2861caf7981003957b5ef97369c8b3d3eaed41a3398"
 
   depends_on "unixodbc"
   depends_on "openssl"
@@ -20,8 +20,8 @@ class MssqlTools < Formula
         puts "Do you accept the license terms? (Enter YES or NO)"
         accept_eula = STDIN.gets.chomp
         if accept_eula
-          break if accept_eula.casecmp("YES").zero?
-          if accept_eula.casecmp("NO").zero?
+          break if accept_eula == "YES"
+          if accept_eula == "NO"
             puts "Installation terminated: License terms not accepted."
             return false
           else
