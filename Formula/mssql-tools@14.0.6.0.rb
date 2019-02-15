@@ -1,7 +1,7 @@
 class MssqlToolsAT14060 < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
-  url "https://go.microsoft.com/fwlink/?linkid=848963"
+  url "https://download.microsoft.com/download/F/D/1/FD16AA69-F27D-440E-A15A-6C521A1972E6/mssql-tools-14.0.6.0.tar.gz"
   version "14.0.6.0"
   sha256 "b31cfe98ff3c8f60a98fd02a1ebbe7cf7a2172320239adccd073ad3870786bf9"
 
