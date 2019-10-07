@@ -67,7 +67,7 @@ class Msodbcsql17AT17421 < Formula
     odbcinst.ini after the formula is uninstalled. This can be done by executing
     the following command:
         odbcinst -u -d -n "ODBC Driver 17 for SQL Server"
-    EOS
+  EOS
   end
 
   test do
