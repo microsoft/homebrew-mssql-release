@@ -1,9 +1,9 @@
 class MssqlTools < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
-  url "https://download.microsoft.com/download/F/D/1/FD16AA69-F27D-440E-A15A-6C521A1972E6/mssql-tools-17.5.1.1.tar.gz"
-  version "17.5.1.1"
-  sha256 "3f57559d0e21fcd94c2a6eafd2d495b98aaa556478aca9431234b342d246a9ef"
+  url "https://download.microsoft.com/download/F/D/1/FD16AA69-F27D-440E-A15A-6C521A1972E6/mssql-tools-17.5.1.2.tar.gz"
+  version "17.5.1.2"
+  sha256 "0bb947f4eae4cf103bc716b713e4a7eddba7fe28baad1acc241349ba11fc434e"
 
   depends_on "unixodbc"
   depends_on "openssl"
