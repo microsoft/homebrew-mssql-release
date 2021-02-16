@@ -1,7 +1,7 @@
 class Msodbcsql17 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
-  url "https://download.microsoft.com/download/1/9/A/19AF548A-6DD3-4B48-88DC-724E9ABCEB9A/msodbcsql17-17.7.1.1.tar.gz"
+  url "http://download.microsoft.com/download/1/9/A/19AF548A-6DD3-4B48-88DC-724E9ABCEB9A/msodbcsql17-17.7.1.1.tar.gz"
   version "17.7.1.1"
   sha256 "dbd012b9a5d7b5d815039b8949639bc66321e74136c4e20a4e054d3030f0bf49"
 
