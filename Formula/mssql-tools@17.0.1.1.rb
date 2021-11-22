@@ -6,7 +6,7 @@ class MssqlToolsAT17011 < Formula
   sha256 "61fe8c34e6695b04ac12008c697c888bf9a85dad5490d3cf8b535d358c258a5d"
 
   depends_on "unixodbc"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "msodbcsql17"
 
   def check_eula_acceptance?

@@ -10,7 +10,7 @@ class MsodbcsqlAT13192 < Formula
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
   depends_on "unixodbc"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   def check_eula_acceptance?
     if ENV["ACCEPT_EULA"] != "y" && ENV["ACCEPT_EULA"] != "Y"

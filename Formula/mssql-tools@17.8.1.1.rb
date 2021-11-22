@@ -8,7 +8,7 @@ class MssqlToolsAT17811 < Formula
                                         "25b13b1c325be3b3deeec5c3a47c4297521823871535cdd41ef9d04e54ffd199"
 
   depends_on "unixodbc"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "msodbcsql17"
 
   def check_eula_acceptance?

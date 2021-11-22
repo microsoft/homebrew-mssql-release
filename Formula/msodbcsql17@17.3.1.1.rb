@@ -10,7 +10,7 @@ class Msodbcsql17AT17311 < Formula
   keg_only :versioned_formula
 
   depends_on "unixodbc"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   def check_eula_acceptance?
     if ENV["ACCEPT_EULA"] != "y" && ENV["ACCEPT_EULA"] != "Y"
