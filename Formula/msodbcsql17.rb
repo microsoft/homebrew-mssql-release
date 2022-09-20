@@ -14,7 +14,7 @@ class Msodbcsql17 < Formula
   depends_on "openssl"
 
   def check_eula_acceptance?
-    if ENV["ACCEPT_EULA"] != "y" && ENV["ACCEPT_EULA"] != "Y"
+    if ENV["HOMEBREW_ACCEPT_EULA"] != "y" && ENV["HOMEBREW_ACCEPT_EULA"] != "Y"
       puts "The license terms for this product can be downloaded from"
       puts "https://aka.ms/odbc17eula and found in"
       puts "/usr/local/share/doc/msodbcsql17/LICENSE.txt . By entering 'YES',"
@@ -35,7 +35,7 @@ class Msodbcsql17 < Formula
         else
           puts "Installation terminated: Could not prompt for license acceptance."
           puts "If you are performing an unattended installation, you may set"
-          puts "ACCEPT_EULA to Y to indicate your acceptance of the license terms."
+          puts "HOMEBREW_ACCEPT_EULA to Y to indicate your acceptance of the license terms."
           return false
         end
       end
