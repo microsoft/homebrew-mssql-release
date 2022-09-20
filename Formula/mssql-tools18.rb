@@ -10,7 +10,7 @@ class MssqlTools18 < Formula
   depends_on "msodbcsql18"
 
   def check_eula_acceptance?
-    if ENV["ACCEPT_EULA"] != "y" && ENV["ACCEPT_EULA"] != "Y"
+    if ENV["HOMEBREW_ACCEPT_EULA"] != "y" && ENV["HOMEBREW_ACCEPT_EULA"] != "Y"
       puts "The license terms for this product can be downloaded from"
       puts "http://go.microsoft.com/fwlink/?LinkId=746949 and found in"
       puts "#{prefix}/share/doc/mssql-tools18/LICENSE.txt . By entering 'YES',"
@@ -30,7 +30,7 @@ class MssqlTools18 < Formula
         else
           puts "Installation terminated: Could not prompt for license acceptance."
           puts "If you are performing an unattended installation, you may set"
-          puts "ACCEPT_EULA to Y to indicate your acceptance of the license terms."
+          puts "HOMEBREW_ACCEPT_EULA to Y to indicate your acceptance of the license terms."
           return false
         end
       end
