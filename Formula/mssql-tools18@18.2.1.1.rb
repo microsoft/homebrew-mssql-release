@@ -1,4 +1,4 @@
-class MssqlTools18 < Formula
+class MssqlTools18AT18211 < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
   url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/0/9/7/0976a30f-1710-4754-9445-bead058dd0c8/mssql-tools18-18.2.1.1-arm64.tar.gz" :
