@@ -1,4 +1,4 @@
-class Msodbcsql18 < Formula
+class Msodbcsql18AT18611 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/ba55cd39-a252-4a93-a859-7b1c2fcb195c/msodbcsql18-18.6.1.1-arm64.tar.gz" :
@@ -9,7 +9,7 @@ class Msodbcsql18 < Formula
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
-
+  keg_only :versioned_formula
   depends_on "unixodbc"
   depends_on "openssl"
 
