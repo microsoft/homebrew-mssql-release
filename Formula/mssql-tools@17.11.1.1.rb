@@ -1,4 +1,4 @@
-class MssqlTools < Formula
+class MssqlToolsAT171111 < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
   url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/2a985c4e-34e2-4126-b91d-31c97ce67b8c/mssql-tools-17.11.1.1-arm64.tar.gz" :
