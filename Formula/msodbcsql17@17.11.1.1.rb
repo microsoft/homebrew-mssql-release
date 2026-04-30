@@ -1,4 +1,4 @@
-class Msodbcsql17 < Formula
+class Msodbcsql17AT171111 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
   url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/54987daf-145b-4d74-b51d-deac2f0ae6ec/msodbcsql17-17.11.1.1-arm64.tar.gz" :
@@ -9,7 +9,7 @@ class Msodbcsql17 < Formula
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 
-
+  keg_only :versioned_formula
   depends_on "unixodbc"
   depends_on "openssl"
 
@@ -17,7 +17,7 @@ class Msodbcsql17 < Formula
     if ENV["HOMEBREW_ACCEPT_EULA"] != "y" && ENV["HOMEBREW_ACCEPT_EULA"] != "Y"
       puts "The license terms for this product can be downloaded from"
       puts "https://aka.ms/odbc17eula and found in"
-      puts "/usr/local/share/doc/msodbcsql17/LICENSE.txt . By entering 'YES',"
+      puts "#{prefix}/share/doc/msodbcsql17/LICENSE.txt . By entering 'YES',"
       puts "you indicate that you accept the license terms."
       puts ""
       loop do
@@ -67,7 +67,7 @@ class Msodbcsql17 < Formula
     odbcinst.ini after the formula is uninstalled. This can be done by executing
     the following command:
         odbcinst -u -d -n "ODBC Driver 17 for SQL Server"
-  EOS
+    EOS
   end
 
   test do
