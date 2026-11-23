@@ -19,7 +19,7 @@ class Msodbcsql < Formula
       puts ""
       loop do
         puts "Do you accept the license terms? (Enter YES or NO)"
-        accept_eula = STDIN.gets.chomp
+        accept_eula = STDIN.gets&.chomp
         if accept_eula
           break if accept_eula == "YES"
           if accept_eula == "NO"
@@ -52,7 +52,7 @@ class Msodbcsql < Formula
     cp_r ".", prefix.to_s
 
     if build.with? "registration"
-      system "odbcinst", "-u", "-d", "-n", "\"ODBC Driver 13 for SQL Server\""
+      system "odbcinst", "-u", "-d", "-n", "ODBC Driver 13 for SQL Server"
       system "odbcinst", "-i", "-d", "-f", "./odbcinst.ini"
     end
   end
