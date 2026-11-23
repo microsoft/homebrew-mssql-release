@@ -1,11 +1,11 @@
 class Msodbcsql17 < Formula
   desc "ODBC Driver for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/mt654048(v=sql.1).aspx"
-  url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/54987daf-145b-4d74-b51d-deac2f0ae6ec/msodbcsql17-17.11.1.1-arm64.tar.gz" :
-                                     "https://download.microsoft.com/download/54987daf-145b-4d74-b51d-deac2f0ae6ec/msodbcsql17-17.11.1.1-amd64.tar.gz"
-  version "17.11.1.1"
-  sha256 Hardware::CPU.arch == :arm64 ? "1272bfeae5da1fc5a90f760d51c5589f21c702d519583a00cf172334e50513f6" :
-                                        "2b7f9e1b51b2ea0c487212efc4a1fa07288913742f56ae672db940f34eeb77db"
+  url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/c7154c9f-8384-412c-9a0d-aa794e229e2a/msodbcsql17-17.12.1.1-arm64.tar.gz" :
+                                     "https://download.microsoft.com/download/c7154c9f-8384-412c-9a0d-aa794e229e2a/msodbcsql17-17.12.1.1-amd64.tar.gz"
+  version "17.12.1.1"
+  sha256 Hardware::CPU.arch == :arm64 ? "38902d6101b4995e95a8ff3abeba44371d117f126d272fc052c50509be8b5004" :
+                                        "7f37809beeb810b34121c038e069003864f8c51a8bb327d7ab0c7de75214a941"
 
   option "without-registration", "Don't register the driver in odbcinst.ini"
 

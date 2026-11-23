@@ -1,11 +1,11 @@
 class MssqlTools < Formula
   desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
   homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
-  url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/2a985c4e-34e2-4126-b91d-31c97ce67b8c/mssql-tools-17.11.1.1-arm64.tar.gz" :
-                                     "https://download.microsoft.com/download/2a985c4e-34e2-4126-b91d-31c97ce67b8c/mssql-tools-17.11.1.1-amd64.tar.gz"
-  version "17.11.1.1"
-  sha256 Hardware::CPU.arch == :arm64 ? "fdcdb7c668ba80945bc6ab4c6eb6e8abf4af38a9884236aafdde0c42fa49fc19" :
-                                        "d25fc1ccd195bec44829bb703efb59bd74a744f7d1894ccdf7a6c96325ccd0b6"
+  url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/2d731777-9d58-4d41-8175-af861539a207/mssql-tools-17.12.1.1-arm64.tar.gz" :
+                                     "https://download.microsoft.com/download/2d731777-9d58-4d41-8175-af861539a207/mssql-tools-17.12.1.1-amd64.tar.gz"
+  version "17.12.1.1"
+  sha256 Hardware::CPU.arch == :arm64 ? "bd4f11855a7f9698f39b3902354c4f37131e791ad3595cd2c8a5a2caa2eec823" :
+                                        "277bdd5e77ac46dd43e0050a45d25d93f59bb66d312f6345dd537d3eac7fb0d4"
 
   depends_on "unixodbc"
   depends_on "openssl"
