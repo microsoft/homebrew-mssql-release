@@ -18,7 +18,7 @@ class MssqlToolsAT17611 < Formula
       puts ""
       loop do
         puts "Do you accept the license terms? (Enter YES or NO)"
-        accept_eula = STDIN.gets.chomp
+        accept_eula = STDIN.gets&.chomp
         if accept_eula
           break if accept_eula.casecmp("YES").zero?
           if accept_eula.casecmp("NO").zero?

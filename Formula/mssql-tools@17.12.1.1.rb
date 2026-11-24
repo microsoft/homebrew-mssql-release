@@ -1,0 +1,64 @@
+class MssqlToolsAT171211 < Formula
+  desc "Sqlcmd and Bcp for Microsoft(R) SQL Server(R)"
+  homepage "https://msdn.microsoft.com/en-us/library/ms162773.aspx"
+  url Hardware::CPU.arch == :arm64 ? "https://download.microsoft.com/download/2d731777-9d58-4d41-8175-af861539a207/mssql-tools-17.12.1.1-arm64.tar.gz" :
+                                     "https://download.microsoft.com/download/2d731777-9d58-4d41-8175-af861539a207/mssql-tools-17.12.1.1-amd64.tar.gz"
+  version "17.12.1.1"
+  sha256 Hardware::CPU.arch == :arm64 ? "bd4f11855a7f9698f39b3902354c4f37131e791ad3595cd2c8a5a2caa2eec823" :
+                                        "277bdd5e77ac46dd43e0050a45d25d93f59bb66d312f6345dd537d3eac7fb0d4"
+
+  depends_on "unixodbc"
+  depends_on "openssl"
+  depends_on "msodbcsql17"
+
+  def check_eula_acceptance?
+    if ENV["HOMEBREW_ACCEPT_EULA"] != "y" && ENV["HOMEBREW_ACCEPT_EULA"] != "Y"
+      puts "The license terms for this product can be downloaded from"
+      puts "http://go.microsoft.com/fwlink/?LinkId=746949 and found in"
+      puts "/usr/local/share/doc/mssql-tools/LICENSE.txt . By entering 'YES',"
+      puts "you indicate that you accept the license terms."
+      puts ""
+      loop do
+        puts "Do you accept the license terms? (Enter YES or NO)"
+        accept_eula = STDIN.gets&.chomp
+        if accept_eula
+          break if accept_eula.casecmp("YES").zero?
+          if accept_eula.casecmp("NO").zero?
+            puts "Installation terminated: License terms not accepted."
+            return false
+          else
+            puts "Please enter YES or NO"
+          end
+        else
+          puts "Installation terminated: Could not prompt for license acceptance."
+          puts "If you are performing an unattended installation, you may set"
+          puts "HOMEBREW_ACCEPT_EULA to Y to indicate your acceptance of the license terms."
+          return false
+        end
+      end
+    end
+    true
+  end
+
+  def install
+    return false unless check_eula_acceptance?
+
+    chmod 0444, "bin/sqlcmd"
+    chmod 0444, "bin/bcp"
+    chmod 0444, "share/resources/en_US/BatchParserGrammar.dfa"
+    chmod 0444, "share/resources/en_US/BatchParserGrammar.llr"
+    chmod 0444, "share/resources/en_US/bcp.rll"
+    chmod 0444, "share/resources/en_US/SQLCMD.rll"
+    chmod 0644, "usr/share/doc/mssql-tools/LICENSE.txt"
+    chmod 0644, "usr/share/doc/mssql-tools/THIRDPARTYNOTICES.txt"
+
+    cp_r ".", prefix.to_s
+  end
+
+  test do
+    out = shell_output("#{bin}/sqlcmd -?")
+    assert_match "Microsoft (R) SQL Server Command Line Tool", out
+    out = shell_output("#{bin}/bcp -v")
+    assert_match "BCP - Bulk Copy Program for Microsoft SQL Server", out
+  end
+end
